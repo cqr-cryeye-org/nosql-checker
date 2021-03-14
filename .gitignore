@@ -1,2 +1,4 @@
 venv
 .idea
+result.json
+__pycache__

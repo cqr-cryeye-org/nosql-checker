@@ -30,8 +30,11 @@ class NosqlChecker:
                     services.append({
                         'product': 'redis',
                         'port': port,
-                        'version': ''
+                        'version': '',
+                        'message': f'redis is vulnerable to unauthorized access on port {port}'
                     })
+                    s.close()
+                    break
                 s.close()
             except Exception as e:
                 print(f'redis: {e}')
@@ -53,8 +56,10 @@ class NosqlChecker:
                 services.append({
                     'product': 'mongodb',
                     'port': 27017,
-                    'version': ''
+                    'version': '',
+                    'message': 'mongodb is vulnerable to unauthorized access on port 27017'
                 })
+                break
             except Exception as e:
                 print(f'mongodb: {e}')
                 pass
@@ -77,7 +82,8 @@ class NosqlChecker:
                 result.append({
                     'product': 'memcached',
                     'port': 11211,
-                    'version': ''
+                    'version': '',
+                    'message': 'memcached is vulnerable to unauthorized access on port 11211'
                 })
             s.close()
         except Exception as e:
@@ -100,7 +106,8 @@ class NosqlChecker:
                 result.append({
                     'product': 'elasticsearch',
                     'port': 9200,
-                    'version': ''
+                    'version': '',
+                    'message': 'elasticsearch is vulnerable to unauthorized access on port 9200'
                 })
         except Exception as e:
             print(f'elasticsearch: {e}')
@@ -126,7 +133,8 @@ class NosqlChecker:
                 result.append({
                     'product': 'zookeeper',
                     'port': 2181,
-                    'version': ''
+                    'version': '',
+                    'message': 'zookeeper is vulnerable to unauthorized access on port 2181'
                 })
         except Exception as e:
             print(f'zookeeper: {e}')
@@ -148,6 +156,7 @@ class NosqlChecker:
                 'product': 'ftp',
                 'port': 21,
                 'version': '',
+                'message': 'ftp is vulnerable to unauthorized access on port 21'
             })
         except Exception as e:
             print(f'ftp: {e}')
@@ -170,8 +179,10 @@ class NosqlChecker:
                     result.append({
                         'product': 'couchdb',
                         'port': port,
-                        'version': ''
+                        'version': '',
+                        'message': f'couchdb is vulnerable to unauthorized access on port {port}'
                     })
+                    break
             except Exception as e:
                 print(f'couchdb: {e}')
 
@@ -191,7 +202,8 @@ class NosqlChecker:
                 result.append({
                     'product': 'docker',
                     'port': 2375,
-                    'version': ''
+                    'version': '',
+                    'message': 'docker is vulnerable to unauthorized access on port 2375'
                 })
         except Exception as e:
             print(f'docker: {e}')
@@ -213,8 +225,10 @@ class NosqlChecker:
                     result.append({
                         'product': 'hadoop',
                         'port': port,
-                        'version': ''
+                        'version': '',
+                        'message': f'hadoop is vulnerable to unauthorized access on port {port}'
                     })
+                    break
             except Exception as e:
                 print(f'hadoop: {e}')
 
