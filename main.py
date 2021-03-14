@@ -16,7 +16,7 @@ def main(url):
 if __name__ == '__main__':
     start = datetime.now()
     parser = argparse.ArgumentParser()
-    parser.add_argument('--url', type=str)
+    parser.add_argument('--url', type=str, help='set url to check')
     args = parser.parse_args()
     main(args.url)
     print(f'Total time spent (seconds): {(datetime.now() - start).seconds}')
